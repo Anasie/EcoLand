@@ -1,3 +1,4 @@
+// Import necessary packages and files
 import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -6,9 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
+// Import the 'directions_model.dart' and export it for external use
 import 'directions_model.dart';
 export 'directions_model.dart';
 
+// Create a DirectionsWidget class, which is a StatefulWidget
 class DirectionsWidget extends StatefulWidget {
   const DirectionsWidget({Key? key}) : super(key: key);
 
@@ -16,24 +19,32 @@ class DirectionsWidget extends StatefulWidget {
   _DirectionsWidgetState createState() => _DirectionsWidgetState();
 }
 
+// Create the state class _DirectionsWidgetState
 class _DirectionsWidgetState extends State<DirectionsWidget> {
+  // Declare a DirectionsModel instance
   late DirectionsModel _model;
 
+  // Create a GlobalKey for the Scaffold widget
   final scaffoldKey = GlobalKey<ScaffoldState>();
   LatLng? currentUserLocationValue;
 
   @override
   void initState() {
     super.initState();
+    // Initialize the _model by creating an instance of DirectionsModel
     _model = createModel(context, () => DirectionsModel());
 
+    // Fetch the current user's location and set it in the state
     getCurrentUserLocation(defaultLocation: LatLng(0.0, 0.0), cached: true)
         .then((loc) => setState(() => currentUserLocationValue = loc));
+
+    // Initialize the text controller in the _model if it's not already set
     _model.textController ??= TextEditingController();
   }
 
   @override
   void dispose() {
+    // Dispose of the _model
     _model.dispose();
 
     super.dispose();
@@ -42,6 +53,7 @@ class _DirectionsWidgetState extends State<DirectionsWidget> {
   @override
   Widget build(BuildContext context) {
     if (currentUserLocationValue == null) {
+      // Return a loading container if current user location is not available
       return Container(
         color: FlutterFlowTheme.of(context).primaryBackground,
         child: Center(
@@ -59,6 +71,7 @@ class _DirectionsWidgetState extends State<DirectionsWidget> {
     }
 
     return GestureDetector(
+      // Dismiss the keyboard when tapping outside of the text field
       onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
@@ -85,6 +98,7 @@ class _DirectionsWidgetState extends State<DirectionsWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 16),
                 child: TextFormField(
+                  // Set the text controller to the one in the _model
                   controller: _model.textController,
                   obscureText: false,
                   decoration: InputDecoration(
@@ -139,6 +153,7 @@ class _DirectionsWidgetState extends State<DirectionsWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 16),
                 child: FFButtonWidget(
                   onPressed: () {
+                    // Handle the button press action (in this case, print a message)
                     print('Button pressed ...');
                   },
                   text: 'Get Directions',
@@ -168,6 +183,7 @@ class _DirectionsWidgetState extends State<DirectionsWidget> {
                   child: Stack(
                     children: [
                       FlutterFlowGoogleMap(
+                        // Provide various map properties and options
                         controller: _model.googleMapsController,
                         onCameraIdle: (latLng) =>
                             _model.googleMapsCenter = latLng,
