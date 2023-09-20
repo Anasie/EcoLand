@@ -20,3 +20,5 @@ People who are caring about nature and who want to know more about their vehicle
 
 -Supported platforms :
 Android / IOS
+
+![LOGO](https://github.com/Anasie/EcoLand/assets/121847037/22f32abf-ddbf-4b4c-b82f-312fdca47493)
