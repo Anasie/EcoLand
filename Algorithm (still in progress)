@@ -1,0 +1,63 @@
+// Automatic FlutterFlow imports
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/custom_code/actions/index.dart'; // Imports other custom actions
+import '/flutter_flow/custom_functions.dart'; // Imports custom functions
+import 'package:flutter/material.dart';
+// Begin custom action code
+// DO NOT REMOVE OR MODIFY THE CODE ABOVE!
+
+import 'dart:convert';
+import 'dart:math' as math;
+
+import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
+import 'package:timeago/timeago.dart' as timeago;
+import '../../flutter_flow/lat_lng.dart';
+import '../../flutter_flow/place.dart';
+import '../../flutter_flow/uploaded_file.dart';
+import '../../flutter_flow/custom_functions.dart';
+
+Future newCustomAction() async {
+  /// MODIFY CODE ONLY BELOW THIS LINE
+
+  double total_gas_emissions = 0;
+  while (true) {
+    // Get P1
+    await Future.delayed(Duration(seconds: 60));
+    // Get P2
+    double distance = 0; // P2-P1
+    double velocity = 60 * distance;
+    if (velocity > 13) {
+      // Notify
+      bool in_vehicle = true;
+      if (in_vehicle) {
+        // Get Ps
+        double current_velocity = velocity;
+        while (current_velocity > 0.1 * velocity) {
+          await Future.delayed(Duration(seconds: 1200));
+          // Get P3
+          await Future.delayed(Duration(seconds: 60));
+          // Get P4
+          double current_distance = 0; // P4-P3
+          current_velocity = 60 * current_distance;
+        }
+        // Trip done
+        // Get Pf
+        double total_distance = 0; // Pf-Ps
+        double gas_emissions = total_distance * 192;
+        // Display gas
+        total_gas_emissions += gas_emissions;
+        await Future.delayed(Duration(seconds: 1200));
+        continue;
+      } else {
+        await Future.delayed(Duration(seconds: 1200));
+        continue;
+      }
+    } else {
+      await Future.delayed(Duration(seconds: 3600));
+      continue;
+    }
+  }
+
+}
