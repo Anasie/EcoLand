@@ -2,6 +2,8 @@
 It's a mobile app project where an algorithm calculates your vehicle's gas emission based on its trajectory
 For know, the project is incomplete but is progressively getting to the objective.
 
+![image](https://github.com/Anasie/EcoLand/assets/121847037/68cd8db9-5ecc-47fe-b60e-6bfad10e3e27)
+
 
 -Features released soon :
 eCO2 rankings
