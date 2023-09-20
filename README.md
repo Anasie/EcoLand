@@ -6,13 +6,13 @@ For know, the project is incomplete but is progressively getting to the objectiv
 
 
 -Features released soon :
-eCO2 rankings
+CO2e rankings
 Your Land
 Friends Requests
 Cosmetics
 App currency
 Rewards
-
+Automated quick calculation
 
 -Current State of the project :
 Incomplete
@@ -24,3 +24,7 @@ People who are caring about nature and who want to know more about their vehicle
 Android / IOS
 
 ![LOGO](https://github.com/Anasie/EcoLand/assets/121847037/22f32abf-ddbf-4b4c-b82f-312fdca47493)
+
+
+How it's supposed to work ?
+To sum up, the algorithm will get your trajectory based on the direction you put on the given google map. It will then calculate in separated time intervals your position and thus your vehicle's (or the vehicle you're on) velocity, which will then be used to calculate the mean speed of the trip and then the CO2 emission in CO2e.
