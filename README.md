@@ -28,3 +28,6 @@ Android / IOS
 
 How it's supposed to work ?
 To sum up, the algorithm will get your trajectory based on the direction you put on the given google map. It will then calculate in separated time intervals your position and thus your vehicle's (or the vehicle you're on) velocity, which will then be used to calculate the mean speed of the trip and then the CO2 emission in CO2e.
+
+
+![image](https://github.com/Anasie/EcoLand/assets/121847037/45cbe29d-9c9a-45da-b12f-bc9e8f561a4d)
